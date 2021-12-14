@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const url = "http://0.0.0.0:5000";
+const url = "http://localhost:5000";
 
 const config ={
     mode:'no-cors',

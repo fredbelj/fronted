@@ -14,12 +14,14 @@ function App() {
     document.title = `${message}`;
   });
 
-  const controller = (letter) => {
-    getUser().then(response=>{
-      setMessage(`loaded ${letter}`)
-      const data = response.data;
-      setPersonL(data.filter((item)=>{
-        return item.name.last[0] === letter;
+  const controller = letter => {
+    getUser()
+    .then(resp=>{
+      setMessage(`Buscando nombres iniciando con la letra ${letter}`)
+      const data = resp.data;
+      //console.log(data);
+      setPersonL(data.filter(item=>{
+        return item.name.firts[0] === letter;
       })
       )
     })
@@ -27,9 +29,9 @@ function App() {
 
   // const dummy = [
   //   {
-  //     "id": 1,
-  //     "firts": "Freddy",
-  //     "last": "Belmonte"
+  //     id: 1,
+  //     firts: "Freddy",
+  //     last: "Belmonte"
   //   }
   // ]
 

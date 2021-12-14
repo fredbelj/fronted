@@ -1,7 +1,7 @@
 import './styles.css';
 
 function SearchForm(props){
-    const letters = "ABCDEFGHIJKLMN".split('');
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     console.log(letters);
     return(
         <div className="card">
@@ -9,9 +9,13 @@ function SearchForm(props){
             <div className ="col-12"  >
                 <ul id="indexButtons" className="pagination pagination-split">
                     {
-                        letters.map(letter => (
-                            <li key={letter} onClick={(e)=>{props.getUser(`${letter}`)}} >{letter}</li>
-                        ))
+                        letters.map(letra => (
+                            <li key={letra} onClick={
+                                (event)=>{
+                                    props.getUser(`${letra}`)
+                                     console.log(event);
+                                }} >{letra}</li>
+                            ))
                     }                    
                 </ul>
             </div>
